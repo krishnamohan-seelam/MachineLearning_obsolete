@@ -5,5 +5,7 @@
 <li> pandas </li>
 <li> numpy </li>
 <li> jupyter notebook </li>
+<li> matplotlib </li>
+
 
 
