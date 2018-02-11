@@ -13,7 +13,8 @@
 
 [Understanding blight ticket compliance in Detroit](http://midas.umich.edu/wp-content/uploads/sites/3/2017/09/understanding-blight-ticket.pdf)
 ---
-Regular Expressions
+#### Regular Expressions
+
 [Regular expressions documentation in Python 3](https://docs.python.org/3/library/re.html)
 
 Tips and tricks of the trade for cleaning text in Python
