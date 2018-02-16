@@ -2,6 +2,9 @@
 
 ## Data Science links 
 ---
+#### Machine Learning
+[Machine Learning -non technical guide](https://www.innoarchitech.com/machine-learning-an-in-depth-non-technical-guide/)
+
 #### Supervised ML
 
 [Introduction to linear regression analysis](http://people.duke.edu/~rnau/regintro.htm)
