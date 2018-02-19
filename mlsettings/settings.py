@@ -7,28 +7,33 @@ APP_ML_DATA_PATH = "ML_DATASOURCE"
 
 DEFAULT_FILENAME = r"F:\MachineLearning\mlsettings\mlconfig.json"
 DEFAULT_APP_ENV = "DEV"
+
 CONFIG_KEYS = ['ML_DATASOURCE', 'ML_PATH']
+
 
 
 def load_app_config(filename=DEFAULT_FILENAME, app_env=DEFAULT_APP_ENV):
     config_dict = load_config_json(filename)
-    print(config_dict)
+
     for config_value in config_dict[app_env]:
 
         if config_value in os.environ:
             sys.path.append(os.environ.get(config_value))
-            print("Adding {0}  to system path".format(os.environ.get(config_value)))
+            print("Adding {0}  to system path" \
+                  .format(os.environ.get(config_value)))
         else:
-            print("{0} not found".format(config_value))
+            print("{0} not found in system path setting from config file"\
+                  .format(config_value))
+            sys.path.append(config_dict[app_env][config_value])
+
 
 
 def load_config_json(filename):
-    if os.path.exists(filename):
-        with open(filename, 'r') as logging_configuration_file:
-            config_dict = json.load(logging_configuration_file)
-        return config_dict
-    else:
-        return None
+    if not os.path.exists(filename):
+        raise ValueError(" config {0}  file not found".format(filename))
+    with open(filename, 'r') as logging_configuration_file:
+        config_dict = json.load(logging_configuration_file)
+    return config_dict
 
 
 def get_datafolder_path(data_path=APP_ML_DATA_PATH):
